@@ -1,23 +1,27 @@
 package actividadFowler;
 
-class Rental {
-	private Movie _movie;
-	private int _daysRented;
+public class Rental {
+	Movie movieRental;
+	private int rentedDays;
 
 	public Rental(Movie movie, int daysRented) {
-		_movie = movie;
-		_daysRented = daysRented;
+		movieRental = movie;
+		rentedDays = daysRented;
 	}
 
 	public int getDaysRented() {
-		return _daysRented;
+		return rentedDays;
 	}
 
 	public Movie getMovie() {
-		return _movie;
+		return movieRental;
 	}
 
-	public int getFrequentRenterPoints() {
-		return _movie.getFrequentRenterPoints(_daysRented);
+	int getFrequentRenterPoints() {
+		return movieRental._price.getFrequentRenterPoints(rentedDays);
+	}
+
+	double getCharge() {
+		return movieRental._price.getCharge(rentedDays);
 	}
 }

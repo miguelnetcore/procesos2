@@ -4,7 +4,13 @@ public class Movie {
 	public static final int CHILDRENS = 2;
 	public static final int REGULAR = 0;
 	public static final int NEW_RELEASE = 1;
-	private String _title;
+	private String _name;
+	Price _price;
+
+	public Movie(String name, int priceCode) {
+		_name = name;
+		setPriceCode(priceCode);
+	}
 
 	public int getPriceCode() {
 		return _price.getPriceCode();
@@ -26,25 +32,12 @@ public class Movie {
 		}
 	}
 
-	private Price _price;
-
-	public Movie(String name, int priceCode) {
-		_title = name;
-		setPriceCode(priceCode);
-	}
-
 	public String getTitle() {
-		return _title;
+		return _name;
 	}
-	double getCharge(int daysRented) {
-		 return _price.getCharge(daysRented);
-		 }
 
-	int getFrequentRenterPoints(int daysRented) {
-		if ((getPriceCode() == Movie.NEW_RELEASE) && daysRented > 1)
-			return 2;
-		else
-			return 1;
+	double getCharge(int daysRented) {
+		return _price.getCharge(daysRented);
 	}
 
 }
