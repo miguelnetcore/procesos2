@@ -3,7 +3,7 @@ package actividadFowler;
 import java.util.Enumeration;
 import java.util.Vector;
 
-class Customer {
+public class Customer {
 	private String _name;
 	private Vector _rentals = new Vector();
 
